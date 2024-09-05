@@ -1,1 +1,2 @@
-print("hello")
+subject = input("Subiect : ")
+print(f"hello {subject}~")
