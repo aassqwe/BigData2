@@ -16,3 +16,6 @@ df = pd.DataFrame(
      ],index=[1, 2, 3], columns=["a", "b", "c"]
 )
 print(df)
+print(df.shape, df.dtypes)
+print(df['b'].value_counts())
+print(df['b'].nunique())
