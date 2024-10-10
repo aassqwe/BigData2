@@ -11,7 +11,7 @@ y = lifesat[["Life satisfaction"]].values
 # print(lifesat.head(27))
 
 lifesat.plot(kind='scatter', grid=True, x="GDP per capita (USD)", y="Life satisfaction")
-plt.axis([23_500, 62_500, 4, 9])
+plt.axis([23_500,62_500,4,9])
 plt.show()
 
 #model = LinearRegression()  # 선형 회귀 모델 적용
