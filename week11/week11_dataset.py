@@ -4,17 +4,26 @@ import matplotlib.pylab as plt
 
 
 titanic = sns.load_dataset('titanic')
+
+titanic_drop_row = titanic.dropna(subset=['age'])
+titanic_drop_row['survived'] = titanic_drop_row['survived'].astype(float)
+plt.figure(figsize=(10, 5))
+sns.histplot(data=titanic_drop_row, x='age', weights='survived', bins=20, kde=False)
+plt.title('Survival Rate bt Age (Drop row)')
+plt.xlabel('Age')
+plt.ylabel('survival Rate (weights)')
+plt.show()
 # print(titanic['sex'].head())
 # print(titanic.info())
 # gender_survival = titanic.groupby(by='sex')['survived'].mean()
 # print(gender_survival)
-gender_survival = titanic.groupby(by='sex')['survived'].mean().reset_index()
-print(type(gender_survival))
-print(titanic.info())
-sns.barplot(data=gender_survival, x='sex', y='survived')
-plt.title('Survival Rate by Gender')
-plt.ylabel('Survival Rate')
-plt.show()
+# gender_survival = titanic.groupby(by='sex')['survived'].mean().reset_index()
+# print(type(gender_survival))
+# print(titanic.info())
+# sns.barplot(data=gender_survival, x='sex', y='survived')
+# plt.title('Survival Rate by Gender')
+# plt.ylabel('Survival Rate')
+# plt.show()
 
 
 # titanic['deck'] = titanic['deck'].cat.add_categories('Unknown')
