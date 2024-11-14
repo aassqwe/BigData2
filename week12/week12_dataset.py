@@ -1,7 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pandas.core.common import random_state
-from  sklearn.linear_model import LinearRegression
+from sklearn.neighbors import KNeighborsRegressor
 from sklearn.model_selection import train_test_split
 
 
@@ -15,13 +14,13 @@ y = titanic_fill_row['survived']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-model = LinearRegression()
+model = KNeighborsRegressor(n_neighbors=5)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print(y_pred)
 print(y_test)
 
-plt.figure(figsize=(3, 2))
+plt.figure(figsize=(5, 2))
 plt.scatter(X_test, y_test, color='blue', label='Actual')
 plt.scatter(X_test, y_pred, color='red', label='Predicted')
 plt.title('Linear Regression: Real vs predicted')
