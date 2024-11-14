@@ -1,7 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pandas.core.common import random_state
-from  sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 
